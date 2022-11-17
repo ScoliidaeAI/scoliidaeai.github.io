@@ -1,0 +1,281 @@
+/* Page settings */
+* { /* Universal settings to the page */
+    box-sizing: border-box;
+    margin: .3vw;
+}
+body { /* Body of the page */
+    background-color: #303030;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Site heading */
+header { /* Header bar */
+    background-color: #863030;
+    text-align: center;
+    font-size: 90%;
+
+    padding: .5vw;
+    margin-bottom: 0;
+}
+
+hr { /* horizontal rule */
+    background-color: #863030;
+
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 1vh;
+}
+
+/* Navigation */
+nav { /* Navigation bar menu */
+    display: block;
+    float: left;
+    position: relative;
+
+    width:100%;
+    overflow: hidden;
+
+    padding: 0;
+    margin: 0;
+}
+nav .active {
+    background-color: #00aa00;
+    color: #000000;
+    font-weight: bolder;
+    border-bottom: solid #ffffff;
+}
+nav .active:hover{
+    border-bottom: solid #000000;
+}
+nav .inactive {
+    color: #ffffff;
+    background-color: #909090;
+}
+nav ul { /* All menu items are members of this unordered list */
+    list-style-type: none; /* removes the list styling */
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width:100%;
+}
+nav li { /* menu item settings */
+    float: left;
+    width:100%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: .1vw;
+    padding-right: .1vw;
+    margin:0;
+
+    overflow: hidden;
+
+    font-weight: bold;
+
+    border-style:solid;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+}
+nav li:hover {
+    background-color: #ffffff;
+    color: #000000
+}
+nav li a { /* link settings for the nav menu */
+    display: block;
+    color: inherit;
+    text-align: center;
+    padding: .2vw 0;
+    text-decoration: none;
+}
+nav li a:visited { /* Visited links in the navigation menu */
+    color: inherit;
+}
+
+/* Page Contents */
+section div {
+    display: block;
+    position: fixed;
+
+    margin: 0;
+
+    padding: 2%;
+    width: 98.2%;
+    
+    overflow: hidden;
+    word-wrap: break-word;
+
+    background-color: #ffffff;
+    color: #000000;
+}
+
+footer {
+    display: block;
+    background-color: #000000;
+    float:left;
+
+    width: 98.2%;
+    height: 20%;
+}
+
+/* Resize element with window */
+@media only screen and (max-width: 500px) {
+    /* Styles for browsers smaller than 500px */
+    nav li{
+        max-width: 100%;
+    }
+    section div {
+        margin-top: 62vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 501px) {
+    /* Styles for browsers larger than 501px */
+    nav li {
+        max-width: 50%;
+    }
+    section div {
+        margin-top: 31.5vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 560px) {
+    /* Styles for browsers larger than 560px */
+    nav li {
+        max-width: 33.33%;
+    }
+    section div {
+        margin-top: 21.1vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 600px) {
+    /* Styles for browsers larger than 600px */
+    nav li {
+        max-width: 25%;
+    }
+    section div {
+        margin-top: 16.2vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 660px) {
+    /* Styles for browsers larger than 660px */
+    nav li {
+        max-width: 20%;
+    }
+    section div {
+        margin-top: 16.3vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 700px) {
+    /* Styles for browsers larger than 700px */
+    nav li {
+        max-width: 16.65%;
+    }
+    section div {
+        margin-top: 20.5%;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 760px) {
+    /* Styles for browsers larger than 760px */
+    nav li {
+        max-width: 14.285%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 800px) {
+    /* Styles for browsers larger than 800px */
+    nav li {
+        max-width: 12.5%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 860px) {
+    /* Styles for browsers larger than 860px */
+    nav li {
+        max-width: 11.1%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 900px) {
+    /* Styles for browsers larger than 860px */
+    nav li {
+        max-width: 11.1%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 960px) {
+    /* Styles for browsers larger than 860px */
+    nav li {
+        max-width: 11.1%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 1000px) {
+    /* Styles for browsers larger than 860px */
+    nav li {
+        max-width: 11.1%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 1060px) {
+    /* Styles for browsers larger than 1040px */
+    nav li {
+        max-width: 10%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 1100px) {
+    /* Styles for browsers larger than 1100px */
+    nav li {
+        max-width: 9.09%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 1160px) {
+    /* Styles for browsers larger than 860px */
+    nav li {
+        max-width: 11.1%;
+    }
+    section div {
+        margin-top: 11vh;
+        height: 65%;
+    }
+}
+@media only screen and (min-width: 1260px) {
+    /* Styles for browsers larger than 1260px */
+    nav li {
+        max-width: 8.33%;
+    }
+
+    section div {
+        margin-top: 6.5vh;
+        height: 65%;
+    }
+}
