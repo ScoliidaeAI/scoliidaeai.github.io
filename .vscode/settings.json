@@ -1,0 +1,6 @@
+{
+    "python.linting.pylintArgs": [
+        "--disable=C0103",
+        "--ignore-long-limes=True"
+    ]
+}
