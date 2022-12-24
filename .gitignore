@@ -1,2 +1,4 @@
 *.env
 *__pycache__
+
+New_Mods_Sky/logs/discord.log

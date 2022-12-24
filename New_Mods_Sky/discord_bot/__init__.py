@@ -4,6 +4,7 @@ class setup:
     """Sets up the python environment for running the scripts"""
 
     from os.path import relpath, sep as OS_SEPERATOR
+    import logging
 
     def _verify_path(path: str, check_type: bool | str = False) -> str | tuple:
         """Verifies a given path exists and determines if the path the type should be checked"""
@@ -69,7 +70,7 @@ class setup:
             else: file_path=file_path.strip(); grandparent=grandparent.strip()
 
             match grandparent: # Checks access
-                case "__main_setup"|"_discord_bot_token": pass
+                case "_main_setup"|"_discord_bot_token": pass
                 case _: raise SystemError("Unallowed access attempted to retrieve environment information")
 
             def read_raw() -> dict:
@@ -105,7 +106,6 @@ class setup:
                     return
 
         child, parent=_call_stack() # Store call stack outputs for current function and parent to a file
-        print(f"{child} was called by {parent}()")
         return _read_from_environment_file(file_path=setup.ENVIRONMENT_VARIABLE_FILE_PATH, grandparent=parent) # gather filtered values
     @classmethod
     def _discord_bot_token(self):
@@ -144,6 +144,28 @@ class setup:
         ][0]
         if return_value is not None: return "token_found", return_value
         else: return "token_not_found", "invalid token passed, could not retrieve secret token"
+    @classmethod
+    def logger(self, path:str, log_level=logging.INFO):
+        """Custom logger for the bot to use in outputs"""
+
+        #import logging
+        import logging.handlers
+
+        logger = logging.getLogger('discord')
+        logger.setLevel(log_level)
+        logging.getLogger('discord.http').setLevel(logging.DEBUG)
+
+        handler = logging.handlers.RotatingFileHandler(
+            filename=path,
+            encoding='utf-8',
+            maxBytes=32 * 1024 * 1024,  # 32 MiB
+            backupCount=5,  # Rotate through 5 files
+        )
+        dt_fmt = '%Y-%m-%d %H:%M:%S'
+        formatter = logging.Formatter('[{asctime}] [{levelname:<8}] {name}: {message}', dt_fmt, style='{')
+        handler.setFormatter(formatter)
+        logger.addHandler(handler)
+
 
     # Path of the package
     root_Path = relpath(f'{__file__}{OS_SEPERATOR}..')
@@ -156,3 +178,5 @@ class setup:
     if _verify_path(path=_expected_environment_file_path)[0] is True: ENVIRONMENT_VARIABLE_FILE_PATH= _expected_environment_file_path
     else: raise OSError(f"Required environment file could not be found @ {_expected_environment_file_path}!",
         "\nPlease ensure that the path is correct and that the file exists and try again.")
+
+    COGS= []
