@@ -3,7 +3,7 @@
 class setup:
     """Sets up the python environment for running the scripts"""
 
-    from os.path import relpath, sep as OS_SEPERATOR
+    from os.path import relpath, sep; OS_SEPERATOR= sep
     import logging
 
     def _verify_path(path: str, check_type: bool | str = False) -> str | tuple:
